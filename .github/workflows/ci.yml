@@ -28,10 +28,10 @@ jobs:
         run: npm install --frozen-lockfile
 
       - name: Fix eslint permissions
-        run: chmod +x ./node_modules/.bin/eslint
+        run: chmod +x ./node_modules/.bin/*
 
       - name: Lint code
         run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npm run test
