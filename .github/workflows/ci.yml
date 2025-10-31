@@ -44,3 +44,10 @@ jobs:
         with:
           name: coverage-report
           path: coverage
+      
+      - name: Deploy to Render
+        uses: render-examples/github-action@v1
+        with:
+          apiKey: rnd_UgKpcm1z1MaV81ExYBEx6gwV4mY7
+          serviceId: srv-d427d7e3jp1c73adcm4g
+
