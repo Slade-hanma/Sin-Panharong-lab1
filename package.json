@@ -1,0 +1,24 @@
+{
+  "name": "node-cicd",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "mocha --exit",
+  "lint": "eslint . --ext .js"
+  },
+  "dependencies": {
+    "chai": "^6.2.0",
+    "express": "^5.1.0",
+    "mocha": "^11.7.4",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1"
+  }
+}
