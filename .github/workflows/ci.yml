@@ -1,5 +1,4 @@
 # In YAML (used by GitHub Actions), indentation must be consistent, and each level uses 2 spaces (not tabs).
-
 name: Node.js CI (Npm)
 
 on:
@@ -30,7 +29,7 @@ jobs:
         run: npm install --frozen-lockfile
 
       - name: Lint code
-        run: npm lint
+        run: npm run lint
 
       - name: Run tests
         run: npm test
