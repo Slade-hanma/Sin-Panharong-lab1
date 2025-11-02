@@ -25,12 +25,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install --frozen-lockfile
+      # - name: Install dependencies
+      #   run: npm install --frozen-lockfile  # why: --frozen-lockfile ensures lock file is not modified., If the lock file is out-of-sync with package.json, it will fail.
 
       - name: Install dependencies
-        run: npm ci
-
+        run: npm ci  #ci = clean install: deletes node_modules and installs exactly what is in package-lock.json., Faster than npm install for CI., Fails if lock file is out-of-sync (this is good for CI, because you don’t want mismatched dependencies).
+# # 3️⃣ Why remove npm install --frozen-lockfile in CI
+# Both commands are doing the same thing in CI (install dependencies from package-lock.json).
+# Having both is redundant — it runs two installs unnecessarily, wasting time.
+# npm ci is preferred for CI/CD because it’s faster and deterministic.
       - name: Lint code
         run: npm run lint
 
