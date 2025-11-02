@@ -29,7 +29,7 @@ jobs:
         run: npm install --frozen-lockfile
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint code
         run: npm run lint
@@ -46,7 +46,7 @@ jobs:
           name: coverage-report
           path: coverage/
 
-  deploy:
+  deploy: # ✅ Correct: deploy is under jobs, same level as build-and-test
       needs: build-and-test
       runs-on: ubuntu-latest
       if: github.ref == 'refs/heads/main' # deploy only on main branch
