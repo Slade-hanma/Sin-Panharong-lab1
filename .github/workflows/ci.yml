@@ -70,7 +70,7 @@ jobs:
             npx vercel deploy \
               --prod \
               --token $VERCEL_TOKEN \
-              --yes  
+              --yes  \
               --name my-project-name
-              
+
 # --confirm is deprecated Vercel now prefers --yes instead.
